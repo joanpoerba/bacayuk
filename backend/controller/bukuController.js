@@ -1,5 +1,4 @@
 import Buku from "../models/bukuModel.js";
-import Favorite from "../models/favoriteModel.js";
 import path from "path";
 
 export const tambahBuku = async (req, res) => {
@@ -18,6 +17,7 @@ export const tambahBuku = async (req, res) => {
         penulis: req.body.penulis,
         panjang: req.body.panjang,
         lebar: req.body.lebar,
+        stok: req.body.stok,
       });
     } else {
       const file = req.files.file;
@@ -44,7 +44,7 @@ export const tambahBuku = async (req, res) => {
             penerbit: req.body.penerbit,
             penulis: req.body.penulis,
             panjang: req.body.panjang,
-            lebar: req.body.lebar,
+            stok: req.body.stok,
           });
         } catch (error) {
           console.log(error.message);
@@ -75,6 +75,7 @@ export const editBuku = async (req, res) => {
           penulis: req.body.penulis,
           panjang: req.body.panjang,
           lebar: req.body.lebar,
+          stok: req.body.stok,
         },
         {
           where: {
@@ -109,6 +110,7 @@ export const editBuku = async (req, res) => {
               penulis: req.body.penulis,
               panjang: req.body.panjang,
               lebar: req.body.lebar,
+              stok: req.body.stok,
             },
             {
               where: {

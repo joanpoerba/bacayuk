@@ -1,5 +1,6 @@
 import { Sequelize } from "sequelize";
 import db from "../config/database.js";
+import User from "./userModel.js";
 
 const DataTypes = Sequelize;
 
@@ -28,6 +29,8 @@ const Peminjaman = db.define("peminjaman", {
     type: DataTypes.STRING,
   },
 });
+
+// Peminjaman.hasOne(User, { onDelete: "CASCADE" });
 
 export default Peminjaman;
 

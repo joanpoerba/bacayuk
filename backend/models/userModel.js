@@ -1,5 +1,8 @@
 import { Sequelize } from "sequelize";
 import db from "../config/database.js";
+import Comment from "./commentModel.js";
+import Favorite from "./favoriteModel.js";
+import Peminjaman from "./peminjamanModel.js";
 
 const DataTypes = Sequelize;
 
@@ -46,6 +49,10 @@ const User = db.define("user", {
     type: DataTypes.STRING,
   },
 });
+
+User.hasOne(Comment, { onDelete: "CASCADE" });
+User.hasOne(Favorite, { onDelete: "CASCADE" });
+User.hasOne(Peminjaman, { onDelete: "CASCADE" });
 
 export default User;
 

@@ -102,6 +102,7 @@ const AdminOverview = () => {
   const [penerbit, setPenerbit] = useState("");
   const [panjang, setPanjang] = useState("");
   const [lebar, setLebar] = useState("");
+  const [stok, setStok] = useState("");
   const [namaPetugas, setNamaPetugas] = useState("");
   const [emailPetugas, setEmailPetugas] = useState("");
   const [passwordPetugas, setPasswordPetugas] = useState("");
@@ -154,6 +155,7 @@ const AdminOverview = () => {
     formData.append("penerbit", penerbit);
     formData.append("panjang", panjang);
     formData.append("lebar", lebar);
+    formData.append("stok", stok);
 
     try {
       await axios.post("http://localhost:3000/tambahbuku", formData);
@@ -496,6 +498,25 @@ const AdminOverview = () => {
                       placeholder="lebar"
                       name="lebar"
                       onChange={(e) => setLebar(e.target.value)}
+                      required
+                    />
+                  </li>
+                </ul>
+              </div>
+              <h2 className="mt-8 text-md font-medium text-blue-950 col-span-12">
+                Stok
+              </h2>
+              <div className="mt-4 w-full xl:w-[900px]">
+                <ul className="grid grid-cols-12 gap-3 md:gap-6">
+                  <li className="col-span-6 md:col-span-4">
+                    <TextInput
+                      color="default"
+                      id="base"
+                      type="text"
+                      sizing="md"
+                      placeholder="stok buku"
+                      name="stok"
+                      onChange={(e) => setStok(e.target.value)}
                       required
                     />
                   </li>

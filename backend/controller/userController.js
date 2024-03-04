@@ -86,9 +86,9 @@ export const masuk = async (req, res) => {
             })
             .json({ loginToAdmin: true });
         }
-        if(!nama.nama)
-        if (!validator.isEmail(req.body.email))
-          return res.json({ login: false, msg: "format email salah" });
+        if (!nama.nama)
+          if (!validator.isEmail(req.body.email))
+            return res.json({ login: false, msg: "format email salah" });
       } catch (error) {
         console.log(error);
       }
@@ -362,12 +362,14 @@ export const tambahFavorite = async (req, res) => {
           bukuId: req.body.bukuId,
         },
       });
+
       res.json(false);
     } else {
       await Favorite.create({
         userId: req.body.userId,
         bukuId: req.body.bukuId,
       });
+
       res.json(true);
     }
   } catch (error) {

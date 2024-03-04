@@ -145,6 +145,7 @@ const AdminBuku = () => {
                 <Table.HeadCell>Judul</Table.HeadCell>
                 <Table.HeadCell>Cover</Table.HeadCell>
                 <Table.HeadCell>Penulis</Table.HeadCell>
+                <Table.HeadCell>Stok</Table.HeadCell>
                 <Table.HeadCell>Edit</Table.HeadCell>
                 <Table.HeadCell>Hapus</Table.HeadCell>
               </Table.Head>
@@ -161,6 +162,7 @@ const AdminBuku = () => {
                         <img className="w-[150px]" src={buku.urlCover} alt="" />
                       </Table.Cell>
                       <Table.Cell>{buku.penulis}</Table.Cell>
+                      <Table.Cell>{buku.stok}</Table.Cell>
                       <Table.Cell>
                         <Link to={`/editbuku?${buku.id}`}>
                           <HiPencil className="text-blue-500 w-[25px] h-[25px] cursor-pointer" />

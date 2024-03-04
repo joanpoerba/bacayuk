@@ -285,6 +285,7 @@ const DetailBukuMain = () => {
           <section className="w-[95%] lg:w-[80%] grid grid-cols-12 gap-x-5 py-20 md:py-10">
             <div className="col-span-12 sm:col-span-5 md:col-span-4 flex flex-col">
               <img className="w-full" src={buku.urlCover} alt="" />
+              <p className="font-semibold my-4">Stok : {buku.stok}</p>
               <Modal
                 show={hapusFavoriteModal}
                 size="md"
@@ -306,7 +307,7 @@ const DetailBukuMain = () => {
                   </div>
                 </Modal.Body>
               </Modal>
-              <div className="flex justify-between items-center mt-4">
+              <div className="flex justify-between items-center">
                 {statusPeminjamanBuku ? (
                   <Button
                     onClick={() => setOpenModalKembalikan(true)}

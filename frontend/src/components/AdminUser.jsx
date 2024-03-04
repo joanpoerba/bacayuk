@@ -89,7 +89,7 @@ const AdminUser = () => {
   const deleteUser = async (id) => {
     try {
       await axios.delete(`http://localhost:3000/admin/delete/id=${id}`);
-      location.href('/');
+      location.reload();
       getUsers();
     } catch (error) {
       console.log(error);

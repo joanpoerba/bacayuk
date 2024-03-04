@@ -1,5 +1,6 @@
 import { Sequelize } from "sequelize";
 import db from "../config/database.js";
+import User from "./userModel.js";
 
 const DataTypes = Sequelize;
 
@@ -35,8 +36,10 @@ const Comment = db.define("comment", {
   },
 });
 
+// Comment.hasOne(User, { onDelete: "CASCADE" });
+
 export default Comment;
 
 (async () => {
-  await db.sync({alter: true});
+  await db.sync({ alter: true });
 })();

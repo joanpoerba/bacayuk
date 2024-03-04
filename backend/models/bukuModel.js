@@ -56,6 +56,9 @@ const Buku = db.define("buku", {
     type: DataTypes.STRING,
     defaultValue: "-",
   },
+  stok: {
+    type: DataTypes.INTEGER,
+  },
 });
 
 Buku.hasOne(Comment, { onDelete: "CASCADE" });
